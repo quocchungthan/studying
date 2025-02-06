@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "console": "ts-node console-api.ts"
+  },
+  "engines": {
+    "node": "v18.19.1"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
