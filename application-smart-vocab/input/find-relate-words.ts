@@ -7,8 +7,8 @@ const ExitKey = "exit.";
 
 const SelectionSetWhatToDoWithWord = {
    question: "What you want to do with it?",
-   explorer: 'Explorer closing words',
-   similar: 'Explorer similar or opposite meaning words',
+   explorer: 'Explore closing words',
+   similar: 'Explore similar or opposite meaning words',
    definition: 'Definitions',
    another: 'Not this word'
 }
