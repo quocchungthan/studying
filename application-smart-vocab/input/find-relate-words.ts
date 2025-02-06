@@ -10,6 +10,9 @@ export class RelevantWordsService extends StdInState {
    }
    public start(): void {
       const initialWord = this._promptclient('What word do you like to start? ');
-      console.log(initialWord);
+      this.askForSelection([
+         initialWord + ' (verb) ',
+         initialWord + ' (noun)'
+      ]);
    }
 }

@@ -1,3 +1,5 @@
+import inquirer from "inquirer";
+
 export abstract class StdInState {
    public agentName: string = '';
 
@@ -7,7 +9,15 @@ export abstract class StdInState {
 
    }
 
-   protected askForSelection() {
-
+   protected askForSelection(choices: string[]) {
+      return inquirer.prompt([
+         {
+             type: 'list',
+             name: 'selection',
+             message: 'Please select an option:',
+             choices: choices,
+             pageSize: choices.length // Limit number of choices shown at once
+         }
+     ]);
    }
 }

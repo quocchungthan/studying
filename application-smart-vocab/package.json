@@ -6,11 +6,13 @@
     "node": "v18.19.1"
   },
   "dependencies": {
+    "inquirer": "^12.4.1",
     "prompt-sync": "^4.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
+    "@types/inquirer": "^9.0.7",
     "@types/prompt-sync": "^4.2.3"
   }
 }
