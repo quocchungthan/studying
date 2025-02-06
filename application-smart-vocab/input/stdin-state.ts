@@ -9,12 +9,12 @@ export abstract class StdInState {
 
    }
 
-   protected askForSelection(choices: string[]) {
+   protected askForSelection(choices: string[], prompt: string = 'Please select an option:') {
       return inquirer.prompt([
          {
              type: 'list',
              name: 'selection',
-             message: 'Please select an option:',
+             message: prompt,
              choices: choices,
              pageSize: choices.length // Limit number of choices shown at once
          }
