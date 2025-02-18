@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@excalidraw/excalidraw": "^0.17.6",
+    "typescript": "^5.7.3"
+  }
+}
