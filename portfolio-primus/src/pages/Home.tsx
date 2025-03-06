@@ -1,59 +1,65 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg'; // Import the logo SVG
-import ContactForm from '../components/ContactForm';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import logo from "../assets/primus-high-resolution-logo-transparent-cropped.svg";
+import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   const expertiseData = [
-    { label: 'WEB DEVELOPMENT', percentage: 95 },
-    { label: 'UX/UI DESIGN', percentage: 90 },
-    { label: 'GRAPHIC DESIGN', percentage: 85 },
-    { label: 'E-COMMERCE SOLUTIONS', percentage: 85 },
-    { label: 'DIGITAL MARKETING', percentage: 90 },
-    { label: 'PROJECT MANAGEMENT', percentage: 80 },
+    { label: "WEB DEVELOPMENT", percentage: 95 },
+    { label: "UX/UI DESIGN", percentage: 90 },
+    { label: "GRAPHIC DESIGN", percentage: 85 },
+    { label: "E-COMMERCE SOLUTIONS", percentage: 85 },
+    { label: "DIGITAL MARKETING", percentage: 90 },
+    { label: "PROJECT MANAGEMENT", percentage: 80 },
   ];
 
   const experienceData = [
     {
-      period: '2015-2017',
-      title: 'PROJECT A',
-      role: 'Lead Web Development Specialist',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      period: "2015-2017",
+      title: "PROJECT A",
+      role: "Lead Web Development Specialist",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      period: '2017-2019',
-      title: 'PROJECT B',
-      role: 'Lead UX/UI Designer',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      period: "2017-2019",
+      title: "PROJECT B",
+      role: "Lead UX/UI Designer",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      period: '2019-2021',
-      title: 'PROJECT C',
-      role: 'Technical Director',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      period: "2019-2021",
+      title: "PROJECT C",
+      role: "Technical Director",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      period: '2021-Present',
-      title: 'PROJECT D',
-      role: 'Specialist in E-commerce Solutions',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      period: "2021-Present",
+      title: "PROJECT D",
+      role: "Specialist in E-commerce Solutions",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      period: '2021-Present',
-      title: 'PROJECT E',
-      role: 'Innovative Digital Marketing Campaigns',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      period: "2021-Present",
+      title: "PROJECT E",
+      role: "Innovative Digital Marketing Campaigns",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      period: '2022-Future',
-      title: 'PROJECT F',
-      role: 'Cutting-edge Web Development Projects',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }
+      period: "2022-Future",
+      title: "PROJECT F",
+      role: "Cutting-edge Web Development Projects",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
   ];
 
   return (
@@ -68,27 +74,28 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <div 
+        <div
           id="home"
-          className="min-h-screen relative flex items-center !pb-[200px]"
+          className="min-h-screen relative flex items-center !pb-[100px] md:!pb-[200px]"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&q=80&w=2071")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&q=80&w=2071")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/80"></div>
-          <div className="container relative z-10">
+          <div className="container relative z-10 px-4 sm:px-6 md:px-8">
             <div className="max-w-4xl">
-              <h1 className="text-8xl font-bold text-white mb-6">
-                We<span style={{color: '#00f146'}}>'</span>re
+              <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6">
+                We<span style={{ color: "#00f146" }}>'</span>re
                 <br />
                 Primus
               </h1>
-              <p className="text-2xl text-white/70 mb-2">
+              <p className="text-xl md:text-2xl text-white/70 mb-2">
                 We empower Your Business with
               </p>
-              <p className="text-2xl text-white/70 mb-8">
+              <p className="text-xl md:text-2xl text-white/70 mb-8">
                 Exceptional Web Solutions
               </p>
             </div>
@@ -96,19 +103,25 @@ export default function Home() {
         </div>
 
         {/* Introduction Section */}
-        <div className="py-32 bg-[#2A2E3D] !mt-[-400px]">
-          <div className="container">
-            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative min-h-[70vh] z-10 content-center">
+        <div className="py-16 md:py-32 bg-[#2A2E3D] !mt-[-200px] md:!mt-[-400px]">
+          <div className="container px-4 sm:px-6 md:px-8">
+            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-6 sm:p-10 md:p-16 relative min-h-[50vh] md:min-h-[70vh] z-10 content-center">
               <div className="text-center">
-                <div className="text-[#00FF85] text-6xl font-bold mb-8 items-center content-between justify-center">
-                  <img src={logo} alt="Logo" style={{margin: 'auto'}} className="logo-image" />
+                <div className="text-[#00FF85] text-4xl md:text-6xl font-bold mb-6 md:mb-8 items-center content-between justify-center">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    style={{ margin: "auto" }}
+                    className="logo-image"
+                  />
                 </div>
-                <p className="text-white/70 text-xl mb-12">
-                  At Primus, we are committed to delivering top-notch web development, user interface, and graphic design solutions. With expertise in various technical aspects, we ensure the success of every project we handle.
+                <p className="text-white/70 text-lg md:text-xl mb-8 md:mb-12">
+                  At Primus, we are committed to delivering top-notch web
+                  development, user interface, and graphic design solutions.
+                  With expertise in various technical aspects, we ensure the
+                  success of every project we handle.
                 </p>
-                <button 
-                  className="border border-[#00FF85] text-[#00FF85] px-12 py-4 hover:bg-[#00FF85] hover:text-[#2A2E3D] transition duration-300"
-                >
+                <button className="border border-[#00FF85] text-[#00FF85] px-6 py-3 md:px-12 md:py-4 hover:bg-[#00FF85] hover:text-[#2A2E3D] transition duration-300">
                   VIEW OUR RESUME
                 </button>
               </div>
@@ -117,29 +130,36 @@ export default function Home() {
         </div>
 
         {/* Expertise Section */}
-        <div 
-          id="expertise" 
-          className="py-32 bg-[#2A2E3D] relative"
+        <div
+          id="expertise"
+          className="py-16 md:py-32 bg-[#2A2E3D] relative"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
           }}
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
-          <div className="container relative z-10">
-            <h2 className="text-5xl font-bold text-white/70 text-center mb-4"><span className='tracking-widest'>01 WHY CHOOSE PRIMUS</span></h2>
-            <p className="text-2xl text-white/70 text-center mb-16 tracking-widest">OUR TECHNICAL EXPERTISE</p>
-            <div className="max-w-3xl mx-auto space-y-8">
+          <div className="container relative z-10 px-4 sm:px-6 md:px-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white/70 text-center mb-4">
+              <span className="tracking-widest">01 WHY CHOOSE PRIMUS</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-white/70 text-center mb-10 md:mb-16 tracking-widest">
+              OUR TECHNICAL EXPERTISE
+            </p>
+            <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
               {expertiseData.map((item, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-white">
-                    <span>{item.label}</span>
-                    <span>{item.percentage}%</span>
+                    <span className="text-sm sm:text-base">{item.label}</span>
+                    <span className="text-sm sm:text-base">
+                      {item.percentage}%
+                    </span>
                   </div>
                   <div className="h-2">
-                    <div 
+                    <div
                       className="h-full bg-[#00FF85] transition-all duration-1000"
                       style={{ width: `${item.percentage}%` }}
                     ></div>
@@ -151,24 +171,36 @@ export default function Home() {
         </div>
 
         {/* Portfolio Section */}
-        <div id="portfolio" className="py-32 bg-[#2A2E3D]">
-          <div className="container">
-            <h2 className="text-5xl font-bold text-white/70 text-center mb-4 tracking-widest">02 PORTFOLIO</h2>
-            <p className="text-2xl text-white/70 text-center mb-16 tracking-widest">DISCOVER OUR LATEST PROJECTS</p>
-            <div className="grid md:grid-cols-3 gap-0">
+        <div id="portfolio" className="py-16 md:py-32 bg-[#2A2E3D]">
+          <div className="container px-4 sm:px-6 md:px-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white/70 text-center mb-4 tracking-widest">
+              02 PORTFOLIO
+            </h2>
+            <p className="text-xl md:text-2xl text-white/70 text-center mb-10 md:mb-16 tracking-widest">
+              DISCOVER OUR LATEST PROJECTS
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-0">
               {[1, 2, 3].map((project) => (
-                <Link 
-                  key={project} 
+                <Link
+                  key={project}
                   to={`/project/${project}`}
                   className="group relative block"
                 >
-                  <img 
-                    src={`https://images.unsplash.com/photo-${project === 1 ? '1460925895917-afdab827c52f' : project === 2 ? '1551650975-87deedd944c3' : '1557838923-2985c318be48'}?auto=format&fit=crop&q=80&w=2015`}
+                  <img
+                    src={`https://images.unsplash.com/photo-${
+                      project === 1
+                        ? "1460925895917-afdab827c52f"
+                        : project === 2
+                        ? "1551650975-87deedd944c3"
+                        : "1557838923-2985c318be48"
+                    }?auto=format&fit=crop&q=80&w=2015`}
                     alt={`Project ${project}`}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-48 sm:h-56 md:h-64 object-cover"
                   />
                   <div className="absolute inset-0 bg-[#2A2E3D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <h3 className="text-white text-2xl font-bold">PROJECT {project.toString().padStart(2, '0')}</h3>
+                    <h3 className="text-white text-xl md:text-2xl font-bold">
+                      PROJECT {project.toString().padStart(2, "0")}
+                    </h3>
                   </div>
                 </Link>
               ))}
@@ -177,37 +209,75 @@ export default function Home() {
         </div>
 
         {/* Experience Section */}
-        <div 
-          id="experience" 
-          className="py-32 bg-[#2A2E3D] relative"
+        <div
+          id="experience"
+          className="py-16 md:py-32 bg-[#2A2E3D] relative"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
           }}
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
-          <div className="container relative z-10 !pb-[400px]">
-            <h2 className="text-5xl font-bold text-white/70 text-center mb-4 tracking-widest">03 EXPERIENCE</h2>
-            <div className="max-w-4xl mx-auto mt-16">
-              <div className="relative">
+          <div className="container relative z-10 px-4 sm:px-6 md:px-8 !pb-[200px] md:!pb-[400px]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white/70 text-center mb-4 tracking-widest">
+              03 EXPERIENCE
+            </h2>
+            <div className="max-w-4xl mx-auto mt-10 md:mt-16">
+              {/* Mobile timeline (stacked) */}
+              <div className="md:hidden space-y-8">
+                {experienceData.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative border-l-2 border-[#00FF85] pl-6 pb-8"
+                  >
+                    <div className="absolute left-[-5px] top-0 w-2 h-2 bg-[#00FF85] rounded-full"></div>
+                    <span className="text-[#00FF85] block mb-2">
+                      {item.period}
+                    </span>
+                    <h3 className="text-white text-xl font-bold mb-2">
+                      {item.title}
+                    </h3>
+                    <h4 className="text-white/70 text-lg mb-2">{item.role}</h4>
+                    <p className="text-white/70 text-sm">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop timeline */}
+              <div className="hidden md:block relative">
                 {/* Timeline line */}
                 <div className="absolute left-1/2 h-full w-0.5 bg-[#00FF85]"></div>
-                
+
                 {/* Timeline items */}
                 {experienceData.map((item, index) => (
-                  <div key={index} className={`relative mb-16 ${index % 2 === 0 ? 'text-right pr-8 ml-auto pl-8' : 'text-left pl-8 mr-auto pr-8'}`} style={{width: '45%'}}>
-                    <div 
-                      className="absolute w-3 h-3 bg-[#00FF85] rounded-full" 
+                  <div
+                    key={index}
+                    className={`relative mb-16 ${
+                      index % 2 === 0
+                        ? "text-right pr-8 ml-auto pl-8"
+                        : "text-left pl-8 mr-auto pr-8"
+                    }`}
+                    style={{ width: "45%" }}
+                  >
+                    <div
+                      className="absolute w-3 h-3 bg-[#00FF85] rounded-full"
                       style={{
-                        [index % 2 === 0 ? 'left' : 'right']: [index % 2 === 0 ? '-44px' : '-58px'],
-                        top: '0.5rem',
-                        transform: 'translateX(-50%)'
+                        [index % 2 === 0 ? "left" : "right"]: [
+                          index % 2 === 0 ? "-44px" : "-58px",
+                        ],
+                        top: "0.5rem",
+                        transform: "translateX(-50%)",
                       }}
                     ></div>
-                    <span className="text-[#00FF85] block mb-2">{item.period}</span>
-                    <h3 className="text-white text-2xl font-bold mb-2">{item.title}</h3>
+                    <span className="text-[#00FF85] block mb-2">
+                      {item.period}
+                    </span>
+                    <h3 className="text-white text-2xl font-bold mb-2">
+                      {item.title}
+                    </h3>
                     <h4 className="text-white/70 text-lg mb-2">{item.role}</h4>
                     <p className="text-white/70">{item.description}</p>
                   </div>
@@ -218,23 +288,49 @@ export default function Home() {
         </div>
 
         {/* Contact Section */}
-        <div id="contact" className="py-32 bg-[#2A2E3D] !mt-[-500px]">
-          <div className="container">
-            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative z-40 min-h-[70vh]">
-              <div className='grid grid-cols-2 gap-16'>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-white/70 mb-4 ">CONNECT WITH US</h2>
-                  <p className="text-xl text-white/70">
-                    Let's discuss how we can bring your ideas to life. Reach out to us, and we'll respond promptly.
+        <div
+          id="contact"
+          className="py-16 md:py-32 bg-[#2A2E3D] !mt-[-200px] md:!mt-[-500px]"
+        >
+          <div className="container px-4 sm:px-6 md:px-8">
+            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-6 sm:p-10 md:p-16 relative z-40 min-h-[50vh] md:min-h-[70vh]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                <div className="text-center md:text-left mb-8 md:mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white/70 mb-4">
+                    CONNECT WITH US
+                  </h2>
+                  <p className="text-lg md:text-xl text-white/70">
+                    Let's discuss how we can bring your ideas to life. Reach out
+                    to us, and we'll respond promptly.
                   </p>
                 </div>
                 <ContactForm></ContactForm>
               </div>
-              <div className="flex justify-center space-x-6 mt-12">
-                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Linkedin size={24} /></a>
-                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Twitter size={24} /></a>
-                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Instagram size={24} /></a>
-                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Facebook size={24} /></a>
+              <div className="flex justify-center space-x-6 mt-8 md:mt-12">
+                <a
+                  href="#"
+                  className="text-white/70 hover:text-[#00FF85] transition"
+                >
+                  <Linkedin size={24} />
+                </a>
+                <a
+                  href="#"
+                  className="text-white/70 hover:text-[#00FF85] transition"
+                >
+                  <Twitter size={24} />
+                </a>
+                <a
+                  href="#"
+                  className="text-white/70 hover:text-[#00FF85] transition"
+                >
+                  <Instagram size={24} />
+                </a>
+                <a
+                  href="#"
+                  className="text-white/70 hover:text-[#00FF85] transition"
+                >
+                  <Facebook size={24} />
+                </a>
               </div>
             </div>
           </div>
