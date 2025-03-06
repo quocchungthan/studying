@@ -128,16 +128,16 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
           <div className="container relative z-10">
-            <h2 className="text-5xl font-bold text-white/70 text-center mb-4">01 WHY CHOOSE PRIMUS</h2>
-            <p className="text-2xl text-white/70 text-center mb-16">OUR TECHNICAL EXPERTISE</p>
-            <div className="max-w-4xl mx-auto space-y-8">
+            <h2 className="text-5xl font-bold text-white/70 text-center mb-4"><span className='tracking-widest'>01 WHY CHOOSE PRIMUS</span></h2>
+            <p className="text-2xl text-white/70 text-center mb-16 tracking-widest">OUR TECHNICAL EXPERTISE</p>
+            <div className="max-w-3xl mx-auto space-y-8">
               {expertiseData.map((item, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-white">
                     <span>{item.label}</span>
                     <span>{item.percentage}%</span>
                   </div>
-                  <div className="h-2 bg-white/20">
+                  <div className="h-2">
                     <div 
                       className="h-full bg-[#00FF85] transition-all duration-1000"
                       style={{ width: `${item.percentage}%` }}
@@ -152,8 +152,8 @@ export default function Home() {
         {/* Portfolio Section */}
         <div id="portfolio" className="py-32 bg-[#2A2E3D]">
           <div className="container">
-            <h2 className="text-5xl font-bold text-white/70 text-center mb-4">02 PORTFOLIO</h2>
-            <p className="text-2xl text-white/70 text-center mb-16">DISCOVER OUR LATEST PROJECTS</p>
+            <h2 className="text-5xl font-bold text-white/70 text-center mb-4 tracking-widest">02 PORTFOLIO</h2>
+            <p className="text-2xl text-white/70 text-center mb-16 tracking-widest">DISCOVER OUR LATEST PROJECTS</p>
             <div className="grid md:grid-cols-3 gap-0">
               {[1, 2, 3].map((project) => (
                 <Link 
@@ -188,7 +188,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
           <div className="container relative z-10 !pb-[400px]">
-            <h2 className="text-5xl font-bold text-white/70 text-center mb-4">03 EXPERIENCE</h2>
+            <h2 className="text-5xl font-bold text-white/70 text-center mb-4 tracking-widest">03 EXPERIENCE</h2>
             <div className="max-w-4xl mx-auto mt-16">
               <div className="relative">
                 {/* Timeline line */}
@@ -222,7 +222,7 @@ export default function Home() {
             <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative z-40">
               <div className='grid grid-cols-2 gap-16'>
                 <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-white/70 mb-4">CONNECT WITH US</h2>
+                  <h2 className="text-4xl font-bold text-white/70 mb-4 ">CONNECT WITH US</h2>
                   <p className="text-xl text-white/70">
                     Let's discuss how we can bring your ideas to life. Reach out to us, and we'll respond promptly.
                   </p>
