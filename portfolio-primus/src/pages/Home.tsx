@@ -219,7 +219,7 @@ export default function Home() {
         {/* Contact Section */}
         <div id="contact" className="py-32 bg-[#2A2E3D] !mt-[-500px]">
           <div className="container">
-            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative">
+            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative z-40">
               <div className='grid grid-cols-2 gap-16'>
                 <div className="text-center mb-12">
                   <h2 className="text-4xl font-bold text-white/90 mb-4">CONNECT WITH US</h2>
