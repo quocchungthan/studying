@@ -69,7 +69,7 @@ export default function Home() {
         {/* Hero Section */}
         <div 
           id="home"
-          className="min-h-screen relative flex items-center"
+          className="min-h-screen relative flex items-center !pb-[200px]"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&q=80&w=2071")',
             backgroundSize: 'cover',
@@ -95,9 +95,9 @@ export default function Home() {
         </div>
 
         {/* Introduction Section */}
-        <div className="py-32 bg-[#2A2E3D]">
+        <div className="py-32 bg-[#2A2E3D] !mt-[-400px]">
           <div className="container">
-            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative">
+            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative min-h-[70vh] z-10">
               <div className="text-center">
                 <div className="text-[#00FF85] text-6xl font-bold mb-8 items-center content-between justify-center">
                   <img src={logo} alt="Logo" style={{margin: 'auto'}} className="logo-image" />
@@ -187,7 +187,7 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
-          <div className="container relative z-10">
+          <div className="container relative z-10 !pb-[400px]">
             <h2 className="text-5xl font-bold text-white/90 text-center mb-4">03 EXPERIENCE</h2>
             <div className="max-w-4xl mx-auto mt-16">
               <div className="relative">
@@ -217,7 +217,7 @@ export default function Home() {
         </div>
 
         {/* Contact Section */}
-        <div id="contact" className="py-32 bg-[#2A2E3D]">
+        <div id="contact" className="py-32 bg-[#2A2E3D] !mt-[-500px]">
           <div className="container">
             <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative">
               <div className='grid grid-cols-2 gap-16'>
