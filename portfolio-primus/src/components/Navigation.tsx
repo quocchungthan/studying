@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg'; // Import the logo SVG
 
 export default function Navigation() {
   return (
@@ -7,7 +8,7 @@ export default function Navigation() {
       <div className="container">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="text-[#00FF85] text-4xl font-bold">P</Link>
+            <Link to="/" className="text-[#00FF85] text-4xl font-bold"><img src={logo} alt="Logo" className="logo-image" /></Link>
           </div>
           <div className="flex items-center space-x-8">
             <Link to="/" className="text-white hover:text-[#00FF85] transition">HOME</Link>

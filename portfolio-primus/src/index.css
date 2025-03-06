@@ -25,3 +25,8 @@ input, textarea {
   background-color: white !important;
   color: rgb(160, 160, 159) !important;
 }
+
+img.logo-image {
+  min-height: 20px;
+  max-width: 200px;
+}

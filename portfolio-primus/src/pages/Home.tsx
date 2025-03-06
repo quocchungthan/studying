@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg'; // Import the logo SVG
 
 export default function Home() {
   const expertiseData = [
@@ -98,7 +99,9 @@ export default function Home() {
           <div className="container">
             <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative">
               <div className="text-center">
-                <div className="text-[#00FF85] text-6xl font-bold mb-8">P</div>
+                <div className="text-[#00FF85] text-6xl font-bold mb-8 items-center content-between justify-center">
+                  <img src={logo} alt="Logo" style={{margin: 'auto'}} className="logo-image" />
+                </div>
                 <p className="text-white/90 text-xl mb-12">
                   At Primus, we are committed to delivering top-notch web development, user interface, and graphic design solutions. With expertise in various technical aspects, we ensure the success of every project we handle.
                 </p>
