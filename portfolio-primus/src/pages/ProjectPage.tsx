@@ -72,7 +72,7 @@ export default function ProjectPage() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-white/90 text-xl mb-12 max-w-3xl"
+              className="text-white/70 text-xl mb-12 max-w-3xl"
             >
               {project.description}
             </motion.p>

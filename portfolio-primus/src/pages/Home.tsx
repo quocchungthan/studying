@@ -80,14 +80,14 @@ export default function Home() {
           <div className="container relative z-10">
             <div className="max-w-4xl">
               <h1 className="text-8xl font-bold text-white mb-6">
-                WELCOME
+                We<span style={{color: '#00f146'}}>'</span>re
                 <br />
-                TO PRIMUS
+                Primus
               </h1>
-              <p className="text-2xl text-white/90 mb-2">
-                Empowering Your Business with
+              <p className="text-2xl text-white/70 mb-2">
+                We empower Your Business with
               </p>
-              <p className="text-2xl text-white/90 mb-8">
+              <p className="text-2xl text-white/70 mb-8">
                 Exceptional Web Solutions
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function Home() {
                 <div className="text-[#00FF85] text-6xl font-bold mb-8 items-center content-between justify-center">
                   <img src={logo} alt="Logo" style={{margin: 'auto'}} className="logo-image" />
                 </div>
-                <p className="text-white/90 text-xl mb-12">
+                <p className="text-white/70 text-xl mb-12">
                   At Primus, we are committed to delivering top-notch web development, user interface, and graphic design solutions. With expertise in various technical aspects, we ensure the success of every project we handle.
                 </p>
                 <button 
@@ -128,7 +128,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
           <div className="container relative z-10">
-            <h2 className="text-5xl font-bold text-white/90 text-center mb-4">01 WHY CHOOSE PRIMUS</h2>
+            <h2 className="text-5xl font-bold text-white/70 text-center mb-4">01 WHY CHOOSE PRIMUS</h2>
             <p className="text-2xl text-white/70 text-center mb-16">OUR TECHNICAL EXPERTISE</p>
             <div className="max-w-4xl mx-auto space-y-8">
               {expertiseData.map((item, index) => (
@@ -152,7 +152,7 @@ export default function Home() {
         {/* Portfolio Section */}
         <div id="portfolio" className="py-32 bg-[#2A2E3D]">
           <div className="container">
-            <h2 className="text-5xl font-bold text-white/90 text-center mb-4">02 PORTFOLIO</h2>
+            <h2 className="text-5xl font-bold text-white/70 text-center mb-4">02 PORTFOLIO</h2>
             <p className="text-2xl text-white/70 text-center mb-16">DISCOVER OUR LATEST PROJECTS</p>
             <div className="grid md:grid-cols-3 gap-0">
               {[1, 2, 3].map((project) => (
@@ -188,7 +188,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
           <div className="container relative z-10 !pb-[400px]">
-            <h2 className="text-5xl font-bold text-white/90 text-center mb-4">03 EXPERIENCE</h2>
+            <h2 className="text-5xl font-bold text-white/70 text-center mb-4">03 EXPERIENCE</h2>
             <div className="max-w-4xl mx-auto mt-16">
               <div className="relative">
                 {/* Timeline line */}
@@ -207,7 +207,7 @@ export default function Home() {
                     ></div>
                     <span className="text-[#00FF85] block mb-2">{item.period}</span>
                     <h3 className="text-white text-2xl font-bold mb-2">{item.title}</h3>
-                    <h4 className="text-white/90 text-lg mb-2">{item.role}</h4>
+                    <h4 className="text-white/70 text-lg mb-2">{item.role}</h4>
                     <p className="text-white/70">{item.description}</p>
                   </div>
                 ))}
@@ -222,7 +222,7 @@ export default function Home() {
             <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative z-40">
               <div className='grid grid-cols-2 gap-16'>
                 <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-white/90 mb-4">CONNECT WITH US</h2>
+                  <h2 className="text-4xl font-bold text-white/70 mb-4">CONNECT WITH US</h2>
                   <p className="text-xl text-white/70">
                     Let's discuss how we can bring your ideas to life. Reach out to us, and we'll respond promptly.
                   </p>
@@ -231,14 +231,14 @@ export default function Home() {
                 <form className="space-y-6">
                   <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="block text-white/90 text-sm">First name *</label>
+                      <label className="block text-white/70 text-sm">First name *</label>
                       <input
                         type="text"
                         className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="block text-white/90 text-sm">Last name *</label>
+                      <label className="block text-white/70 text-sm">Last name *</label>
                       <input
                         type="text"
                         className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
@@ -246,21 +246,21 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="block text-white/90 text-sm">Email *</label>
+                    <label className="block text-white/70 text-sm">Email *</label>
                     <input
                       type="email"
                       className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="block text-white/90 text-sm">Phone</label>
+                    <label className="block text-white/70 text-sm">Phone</label>
                     <input
                       type="tel"
                       className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="block text-white/90 text-sm">Message</label>
+                    <label className="block text-white/70 text-sm">Message</label>
                     <textarea
                       rows={6}
                       className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
@@ -275,10 +275,10 @@ export default function Home() {
                 </form>
               </div>
               <div className="flex justify-center space-x-6 mt-12">
-                <a href="#" className="text-white/90 hover:text-[#00FF85] transition"><Linkedin size={24} /></a>
-                <a href="#" className="text-white/90 hover:text-[#00FF85] transition"><Twitter size={24} /></a>
-                <a href="#" className="text-white/90 hover:text-[#00FF85] transition"><Instagram size={24} /></a>
-                <a href="#" className="text-white/90 hover:text-[#00FF85] transition"><Facebook size={24} /></a>
+                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Linkedin size={24} /></a>
+                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Twitter size={24} /></a>
+                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Instagram size={24} /></a>
+                <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Facebook size={24} /></a>
               </div>
             </div>
           </div>

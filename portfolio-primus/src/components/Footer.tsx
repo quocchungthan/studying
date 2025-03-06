@@ -10,7 +10,7 @@ export default function Footer() {
           <Link to="/" className="text-[#00FF85] text-4xl font-bold mb-4">
             <img src={logo} alt="Logo" className="logo-image" />
           </Link>
-          <p className="text-white/60 text-sm">© 2015 by Primus. All rights reserved.</p>
+          <p className="text-white/70 text-sm">© 2015 by Primus. All rights reserved.</p>
         </div>
       </div>
     </footer>
