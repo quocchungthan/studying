@@ -97,7 +97,7 @@ export default function Home() {
         {/* Introduction Section */}
         <div className="py-32 bg-[#2A2E3D] !mt-[-400px]">
           <div className="container">
-            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative min-h-[70vh] z-10">
+            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative min-h-[70vh] z-10 content-center">
               <div className="text-center">
                 <div className="text-[#00FF85] text-6xl font-bold mb-8 items-center content-between justify-center">
                   <img src={logo} alt="Logo" style={{margin: 'auto'}} className="logo-image" />
