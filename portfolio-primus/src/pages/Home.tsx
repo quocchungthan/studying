@@ -217,59 +217,60 @@ export default function Home() {
         <div id="contact" className="py-32 bg-[#2A2E3D]">
           <div className="container">
             <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-white/90 mb-4">CONNECT WITH US</h2>
-                <p className="text-xl text-white/70">
-                  Let's discuss how we can bring your ideas to life. Reach out to us, and we'll respond promptly.
-                </p>
+              <div className='grid grid-cols-2 gap-16'>
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl font-bold text-white/90 mb-4">CONNECT WITH US</h2>
+                  <p className="text-xl text-white/70">
+                    Let's discuss how we can bring your ideas to life. Reach out to us, and we'll respond promptly.
+                  </p>
+                </div>
+
+                <form className="space-y-6">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="block text-white/90 text-sm">First name *</label>
+                      <input
+                        type="text"
+                        className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="block text-white/90 text-sm">Last name *</label>
+                      <input
+                        type="text"
+                        className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-white/90 text-sm">Email *</label>
+                    <input
+                      type="email"
+                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-white/90 text-sm">Phone</label>
+                    <input
+                      type="tel"
+                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-white/90 text-sm">Message</label>
+                    <textarea
+                      rows={6}
+                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-[#00FF85] text-[#2A2E3D] font-bold py-4 hover:bg-[#00FF85]/90 transition"
+                  >
+                    Send
+                  </button>
+                </form>
               </div>
-
-              <form className="space-y-6">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="block text-white/90 text-sm">First name *</label>
-                    <input
-                      type="text"
-                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="block text-white/90 text-sm">Last name *</label>
-                    <input
-                      type="text"
-                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="block text-white/90 text-sm">Email *</label>
-                  <input
-                    type="email"
-                    className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="block text-white/90 text-sm">Phone</label>
-                  <input
-                    type="tel"
-                    className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="block text-white/90 text-sm">Message</label>
-                  <textarea
-                    rows={6}
-                    className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-[#00FF85] text-[#2A2E3D] font-bold py-4 hover:bg-[#00FF85]/90 transition"
-                >
-                  Send
-                </button>
-              </form>
-
               <div className="flex justify-center space-x-6 mt-12">
                 <a href="#" className="text-white/90 hover:text-[#00FF85] transition"><Linkedin size={24} /></a>
                 <a href="#" className="text-white/90 hover:text-[#00FF85] transition"><Twitter size={24} /></a>

@@ -20,3 +20,8 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+input, textarea {
+  background-color: white !important;
+  color: rgb(160, 160, 159) !important;
+}
