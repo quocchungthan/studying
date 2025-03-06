@@ -5,6 +5,7 @@ import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg'; // Import the logo SVG
+import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   const expertiseData = [
@@ -219,7 +220,7 @@ export default function Home() {
         {/* Contact Section */}
         <div id="contact" className="py-32 bg-[#2A2E3D] !mt-[-500px]">
           <div className="container">
-            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative z-40">
+            <div className="max-w-4xl mx-auto bg-[#1E2231] shadow-2xl p-16 relative z-40 min-h-[70vh]">
               <div className='grid grid-cols-2 gap-16'>
                 <div className="text-center mb-12">
                   <h2 className="text-4xl font-bold text-white/70 mb-4 ">CONNECT WITH US</h2>
@@ -227,52 +228,7 @@ export default function Home() {
                     Let's discuss how we can bring your ideas to life. Reach out to us, and we'll respond promptly.
                   </p>
                 </div>
-
-                <form className="space-y-6">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="block text-white/70 text-sm">First name *</label>
-                      <input
-                        type="text"
-                        className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="block text-white/70 text-sm">Last name *</label>
-                      <input
-                        type="text"
-                        className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="block text-white/70 text-sm">Email *</label>
-                    <input
-                      type="email"
-                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="block text-white/70 text-sm">Phone</label>
-                    <input
-                      type="tel"
-                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="block text-white/70 text-sm">Message</label>
-                    <textarea
-                      rows={6}
-                      className="w-full bg-transparent border border-white/30 p-3 text-white focus:outline-none focus:border-[#00FF85]"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#00FF85] text-[#2A2E3D] font-bold py-4 hover:bg-[#00FF85]/90 transition"
-                  >
-                    Send
-                  </button>
-                </form>
+                <ContactForm></ContactForm>
               </div>
               <div className="flex justify-center space-x-6 mt-12">
                 <a href="#" className="text-white/70 hover:text-[#00FF85] transition"><Linkedin size={24} /></a>

@@ -1,0 +1,4 @@
+[context.production]
+  publish = "dist/"
+[functions]
+  directory = "src/netlify/functions"
