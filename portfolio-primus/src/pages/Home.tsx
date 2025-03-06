@@ -200,7 +200,7 @@ export default function Home() {
                     <div 
                       className="absolute w-3 h-3 bg-[#00FF85] rounded-full" 
                       style={{
-                        [index % 2 === 0 ? 'left' : 'right']: '-6px',
+                        [index % 2 === 0 ? 'left' : 'right']: [index % 2 === 0 ? '-44px' : '-58px'],
                         top: '0.5rem',
                         transform: 'translateX(-50%)'
                       }}
