@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:fe": "vite",
+    "dev:fe": "node src/content/load-content && vite",
     "dev": "npm run build && netlify dev",
-    "build": "vite build",
+    "build": "node src/content/load-content && vite build && node src/content/post-build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

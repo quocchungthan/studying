@@ -1,48 +1,20 @@
-import React, { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Maximize2 } from "lucide-react";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import ImageLightbox from "../components/ImageLightbox";
+import React, { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Maximize2 } from 'lucide-react';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import ImageLightbox from '../components/ImageLightbox';
 
-const projectData = {
-  "1": {
-    title: "PROJECT 01",
-    description:
-      "An innovative web application that revolutionizes user experience through cutting-edge design and seamless functionality. Built with modern technologies and best practices in mind.",
-    images: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015",
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2015",
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2015",
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=2015",
-    ],
-  },
-  "2": {
-    title: "PROJECT 02",
-    description:
-      "A comprehensive digital platform that combines elegant design with powerful functionality. This project showcases our ability to create solutions that are both beautiful and effective.",
-    images: [
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=2015",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2015",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=2015",
-    ],
-  },
-  "3": {
-    title: "PROJECT 03",
-    description:
-      "A state-of-the-art mobile application that demonstrates our expertise in creating responsive, user-friendly interfaces that deliver exceptional results.",
-    images: [
-      "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=2015",
-      "https://images.unsplash.com/photo-1481487196290-c152efe083f5?auto=format&fit=crop&q=80&w=2015",
-      "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2015",
-    ],
-  },
-};
+import content from '../assets/content.json';
+
+const projectArray = content.projects
+  .map((x: { name: string; description: string; images: string[] }, i: number) => ({ id: i + 1, thumb: x.images[0], description: x.description, images: x.images, name: x.name }))
+  .map((p) => ({ id: p.id, title: p.name, description: p.description, images: p.images }));
 
 export default function ProjectPage() {
   const { id } = useParams();
-  const project = projectData[id as keyof typeof projectData];
+  const project = projectArray.find((x) => x.id.toString() === id);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

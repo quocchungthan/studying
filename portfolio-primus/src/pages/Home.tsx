@@ -1,66 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import logo from "../assets/primus-high-resolution-logo-transparent-cropped.svg";
-import ContactForm from "../components/ContactForm";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg'; // Import the logo SVG
+import ContactForm from '../components/ContactForm';
+import content from '../assets/content.json';
 
 export default function Home() {
-  const expertiseData = [
-    { label: "WEB DEVELOPMENT", percentage: 95 },
-    { label: "UX/UI DESIGN", percentage: 90 },
-    { label: "GRAPHIC DESIGN", percentage: 85 },
-    { label: "E-COMMERCE SOLUTIONS", percentage: 85 },
-    { label: "DIGITAL MARKETING", percentage: 90 },
-    { label: "PROJECT MANAGEMENT", percentage: 80 },
-  ];
-
-  const experienceData = [
-    {
-      period: "2015-2017",
-      title: "PROJECT A",
-      role: "Lead Web Development Specialist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      period: "2017-2019",
-      title: "PROJECT B",
-      role: "Lead UX/UI Designer",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      period: "2019-2021",
-      title: "PROJECT C",
-      role: "Technical Director",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      period: "2021-Present",
-      title: "PROJECT D",
-      role: "Specialist in E-commerce Solutions",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      period: "2021-Present",
-      title: "PROJECT E",
-      role: "Innovative Digital Marketing Campaigns",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      period: "2022-Future",
-      title: "PROJECT F",
-      role: "Cutting-edge Web Development Projects",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
+  const expertiseData = content.expertise.map((x: { name: string; level: string }) => ({ label: x.name, percentage: x.level }));
+  const experienceData =  content.experience.map((x: { period: string; name: string; subtitle: string; description: string }) => ({ period: x.period, title: x.name, description: x.description, role: x.subtitle.replace('## ', '') }));
+  const portfolioData = content.projects.map((x: { name: string; description: string; images: string[] }, i: number) => ({ id: i + 1, thumb: x.images[0], description: x.description, images: x.images, name: x.name }));
 
   return (
     <motion.div
@@ -180,30 +131,23 @@ export default function Home() {
               DISCOVER OUR LATEST PROJECTS
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-0">
-              {[1, 2, 3].map((project) => (
-                <Link
-                  key={project}
-                  to={`/project/${project}`}
-                  className="group relative block"
-                >
-                  <img
-                    src={`https://images.unsplash.com/photo-${
-                      project === 1
-                        ? "1460925895917-afdab827c52f"
-                        : project === 2
-                        ? "1551650975-87deedd944c3"
-                        : "1557838923-2985c318be48"
-                    }?auto=format&fit=crop&q=80&w=2015`}
-                    alt={`Project ${project}`}
-                    className="w-full h-48 sm:h-56 md:h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-[#2A2E3D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <h3 className="text-white text-xl md:text-2xl font-bold">
-                      PROJECT {project.toString().padStart(2, "0")}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
+              {
+                portfolioData.map((projectData) => {
+                    return <Link
+                      key={projectData.id}
+                      to={`/project/${projectData.id}`}
+                      className="group relative block"
+                    >
+                      <img
+                        src={projectData.thumb}
+                        alt={projectData.name}
+                        className="w-full h-64 object-cover" />
+                      <div className="absolute inset-0 bg-[#2A2E3D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <h3 className="text-white text-2xl font-bold">{projectData.name}</h3>
+                      </div>
+                    </Link>;
+                  })
+              }
             </div>
           </div>
         </div>
