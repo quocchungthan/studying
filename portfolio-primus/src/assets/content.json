@@ -82,27 +82,31 @@
   ],
   "expertise": [
     {
-      "name": "DIGITAL MARKETING",
-      "level": "95"
-    },
-    {
-      "name": "E-COMMERCE SOLUTIONS",
-      "level": "80"
-    },
-    {
-      "name": "GRAPHIC DESIGN",
+      "name": ".Net",
       "level": "70"
     },
     {
-      "name": "PROJECT MANAGEMENT",
-      "level": "90"
-    },
-    {
-      "name": "UX,UI DESIGN",
+      "name": "Artificial intelligence",
       "level": "95"
     },
     {
-      "name": "WEB DEVELOPMENT",
+      "name": "Database Design",
+      "level": "80"
+    },
+    {
+      "name": "Next JS",
+      "level": "95"
+    },
+    {
+      "name": "Project Management",
+      "level": "90"
+    },
+    {
+      "name": "React JS",
+      "level": "95"
+    },
+    {
+      "name": "Typescript",
       "level": "85"
     }
   ]
