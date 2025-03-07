@@ -1,24 +1,52 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg'; // Import the logo SVG
-import ContactForm from '../components/ContactForm';
-import content from '../assets/content.json';
-import ExpertiseSection from '../components/ExpertiseSection';
-import ExperienceSection from '../components/ExperienceSection';
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import logo from "../assets/primus-high-resolution-logo-transparent-cropped.svg";
+import ContactForm from "../components/ContactForm";
+import content from "../assets/content.json";
+import ExpertiseSection from "../components/ExpertiseSection";
+import ExperienceSection from "../components/ExperienceSection";
 
 export default function Home() {
-  const expertiseData = content.expertise.map((x: { name: string; level: string }) => ({ label: x.name, percentage: x.level }));
-  const experienceData =  content.experience.map((x: { period: string; name: string; subtitle: string; description: string }) => ({ period: x.period, title: x.name, description: x.description, role: x.subtitle.replace('## ', '') }))
-    .sort((x, y) => x.period < y.period ? 1 : -1);
-  const portfolioData = content.projects.map((x: { name: string; description: string; images: string[] }, i: number) => ({ id: i + 1, thumb: x.images[0], description: x.description, images: x.images, name: x.name }));
-  
+  const expertiseData = content.expertise.map(
+    (x: { name: string; level: string }) => ({
+      label: x.name,
+      percentage: x.level,
+    })
+  );
+
+  // Transform experience data for the ExperienceSection
+  const experienceData = content.experience
+    .map(
+      (x: {
+        period: string;
+        name: string;
+        subtitle: string;
+        description: string;
+      }) => ({
+        period: x.period,
+        title: x.name,
+        description: x.description,
+        role: x.subtitle.replace("## ", ""),
+      })
+    )
+    .sort((x, y) => (x.period < y.period ? 1 : -1));
+
+  // Create portfolio data for the grid display
+  const portfolioData = content.projects.map((project, index) => ({
+    id: index + 1,
+    thumb: project.images[0],
+    description: project.description,
+    images: project.images,
+    name: project.name,
+  }));
+
   const handleClick = () => {
     const url = content.translation.EXTERNAL_LINKS.TEAM_RESUME;
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
 
   return (
@@ -77,7 +105,10 @@ export default function Home() {
                 <p className="text-white/70 text-lg md:text-xl mb-8 md:mb-12">
                   {content.translation.INTRODUCTION_CONTENT}
                 </p>
-                <button onClick={handleClick} className="border border-[#00FF85] text-[#00FF85] px-6 py-3 md:px-12 md:py-4 hover:bg-[#00FF85] hover:text-[#2A2E3D] transition duration-300">
+                <button
+                  onClick={handleClick}
+                  className="border border-[#00FF85] text-[#00FF85] px-6 py-3 md:px-12 md:py-4 hover:bg-[#00FF85] hover:text-[#2A2E3D] transition duration-300"
+                >
                   VIEW OUR RESUME
                 </button>
               </div>
@@ -97,24 +128,28 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-white/70 text-center mb-10 md:mb-16 tracking-widest">
               DISCOVER OUR LATEST PROJECTS
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-0">
-              {
-                portfolioData.map((projectData) => {
-                    return <Link
-                      key={projectData.id}
-                      to={`/project/${projectData.id}`}
-                      className="group relative block"
-                    >
-                      <img
-                        src={projectData.thumb}
-                        alt={projectData.name}
-                        className="w-full h-64 object-cover" />
-                      <div className="absolute inset-0 bg-[#2A2E3D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <h3 className="text-white text-2xl font-bold">{projectData.name}</h3>
-                      </div>
-                    </Link>;
-                  })
-              }
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              {portfolioData.map((projectData) => (
+                <Link
+                  key={projectData.id}
+                  to={`/project/${projectData.id}`}
+                  className="group relative block overflow-hidden rounded-lg"
+                >
+                  <img
+                    src={projectData.thumb}
+                    alt={projectData.name}
+                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-[#2A2E3D]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                    <h3 className="text-white text-2xl font-bold mb-2">
+                      {projectData.name}
+                    </h3>
+                    <p className="text-white/80 text-sm text-center">
+                      {projectData.description.substring(0, 100)}...
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -143,28 +178,28 @@ export default function Home() {
               <div className="flex justify-center space-x-6 mt-8 md:mt-12">
                 <a
                   href={content.translation.EXTERNAL_LINKS.LINKED_IN}
-                  target='_blank'
+                  target="_blank"
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Linkedin size={24} />
                 </a>
                 <a
                   href={content.translation.EXTERNAL_LINKS.X}
-                  target='_blank'
+                  target="_blank"
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Twitter size={24} />
                 </a>
                 <a
                   href={content.translation.EXTERNAL_LINKS.INSTAGRAM}
-                  target='_blank'
+                  target="_blank"
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Instagram size={24} />
                 </a>
                 <a
                   href={content.translation.EXTERNAL_LINKS.FACEBOOK}
-                  target='_blank'
+                  target="_blank"
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Facebook size={24} />

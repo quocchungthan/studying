@@ -1,25 +1,42 @@
-import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Maximize2 } from 'lucide-react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import ImageLightbox from '../components/ImageLightbox';
+import React, { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Maximize2 } from "lucide-react";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import ImageLightbox from "../components/ImageLightbox";
 
-import content from '../assets/content.json';
+import content from "../assets/content.json";
 
-const projectArray = content.projects
-  .map((x: { name: string; description: string; images: string[] }, i: number) => ({ id: i + 1, thumb: x.images[0], description: x.description, images: x.images, name: x.name }))
-  .map((p) => ({ id: p.id, title: p.name, description: p.description, images: p.images }));
+// Create a standardized project array from content.json
+const projectArray = content.projects.map((project, index) => ({
+  id: index + 1,
+  title: project.name,
+  description: project.description,
+  images: project.images,
+}));
 
 export default function ProjectPage() {
   const { id } = useParams();
-  const project = projectArray.find((x) => x.id.toString() === id);
+  const navigate = useNavigate();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Find the project with the given ID
+  const project = projectArray.find((x) => x.id.toString() === id);
+
+  // Determine the total number of projects
+  const totalProjects = projectArray.length;
+
+  // If project not found, redirect to home
+  useEffect(() => {
+    if (!project) {
+      navigate("/");
+    }
+  }, [project, navigate]);
+
   if (!project) {
-    return <div>Project not found</div>;
+    return null; // Return null while redirecting
   }
 
   return (
@@ -102,7 +119,7 @@ export default function ProjectPage() {
               <Link
                 to={`/project/${Number(id) + 1}`}
                 className={`text-white hover:text-[#00FF85] transition text-sm sm:text-base ${
-                  Number(id) >= 3 ? "invisible" : ""
+                  Number(id) >= totalProjects ? "invisible" : ""
                 }`}
               >
                 Next Project →
