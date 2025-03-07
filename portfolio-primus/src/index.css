@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+
+.animate-grow {
+  animation: grow 2s ease-out forwards;
+}
+
+
 html {
   scroll-behavior: smooth;
 }

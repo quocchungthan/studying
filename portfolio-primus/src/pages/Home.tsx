@@ -7,6 +7,8 @@ import Footer from '../components/Footer';
 import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg'; // Import the logo SVG
 import ContactForm from '../components/ContactForm';
 import content from '../assets/content.json';
+import ExpertiseSection from '../components/ExpertiseSection';
+import ExperienceSection from '../components/ExperienceSection';
 
 export default function Home() {
   const expertiseData = content.expertise.map((x: { name: string; level: string }) => ({ label: x.name, percentage: x.level }));
@@ -83,45 +85,7 @@ export default function Home() {
         </div>
 
         {/* Expertise Section */}
-        <div
-          id="expertise"
-          className="py-16 md:py-32 bg-[#2A2E3D] relative"
-          style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        >
-          <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
-          <div className="container relative z-10 px-4 sm:px-6 md:px-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white/70 text-center mb-4">
-              <span className="tracking-widest">01 WHY CHOOSE PRIMUS</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-white/70 text-center mb-10 md:mb-16 tracking-widest">
-              OUR TECHNICAL EXPERTISE
-            </p>
-            <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
-              {expertiseData.map((item, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex justify-between text-white">
-                    <span className="text-sm sm:text-base">{item.label}</span>
-                    <span className="text-sm sm:text-base">
-                      {item.percentage}%
-                    </span>
-                  </div>
-                  <div className="h-2">
-                    <div
-                      className="h-full bg-[#00FF85] transition-all duration-1000"
-                      style={{ width: `${item.percentage}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <ExpertiseSection expertiseData={expertiseData}></ExpertiseSection>
 
         {/* Portfolio Section */}
         <div id="portfolio" className="py-16 md:py-32 bg-[#2A2E3D]">
@@ -155,83 +119,7 @@ export default function Home() {
         </div>
 
         {/* Experience Section */}
-        <div
-          id="experience"
-          className="py-16 md:py-32 bg-[#2A2E3D] relative"
-          style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        >
-          <div className="absolute inset-0 bg-[#2A2E3D]/90"></div>
-          <div className="container relative z-10 px-4 sm:px-6 md:px-8 !pb-[200px] md:!pb-[400px]">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white/70 text-center mb-4 tracking-widest">
-              03 EXPERIENCE
-            </h2>
-            <div className="max-w-4xl mx-auto mt-10 md:mt-16">
-              {/* Mobile timeline (stacked) */}
-              <div className="md:hidden space-y-8">
-                {experienceData.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative border-l-2 border-[#00FF85] pl-6 pb-8"
-                  >
-                    <div className="absolute left-[-5px] top-0 w-2 h-2 bg-[#00FF85] rounded-full"></div>
-                    <span className="text-[#00FF85] block mb-2">
-                      {item.period}
-                    </span>
-                    <h3 className="text-white text-xl font-bold mb-2">
-                      {item.title}
-                    </h3>
-                    <h4 className="text-white/70 text-lg mb-2">{item.role}</h4>
-                    <p className="text-white/70 text-sm">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Desktop timeline */}
-              <div className="hidden md:block relative">
-                {/* Timeline line */}
-                <div className="absolute left-1/2 h-full w-0.5 bg-[#00FF85]"></div>
-
-                {/* Timeline items */}
-                {experienceData.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`relative mb-16 ${
-                      index % 2 === 0
-                        ? "text-right pr-8 ml-auto pl-8"
-                        : "text-left pl-8 mr-auto pr-8"
-                    }`}
-                    style={{ width: "45%" }}
-                  >
-                    <div
-                      className="absolute w-3 h-3 bg-[#00FF85] rounded-full"
-                      style={{
-                        [index % 2 === 0 ? "left" : "right"]: [
-                          index % 2 === 0 ? "-44px" : "-58px",
-                        ],
-                        top: "0.5rem",
-                        transform: "translateX(-50%)",
-                      }}
-                    ></div>
-                    <span className="text-[#00FF85] block mb-2">
-                      {item.period}
-                    </span>
-                    <h3 className="text-white text-2xl font-bold mb-2">
-                      {item.title}
-                    </h3>
-                    <h4 className="text-white/70 text-lg mb-2">{item.role}</h4>
-                    <p className="text-white/70">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ExperienceSection experienceData={experienceData}></ExperienceSection>
 
         {/* Contact Section */}
         <div
