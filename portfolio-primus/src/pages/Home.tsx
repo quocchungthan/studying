@@ -44,10 +44,10 @@ export default function Home() {
                 Primus
               </h1>
               <p className="text-xl md:text-2xl text-white/70 mb-2">
-                We empower Your Business with
+                {content.translation.SLOGAN_LINE_1}
               </p>
               <p className="text-xl md:text-2xl text-white/70 mb-8">
-                Exceptional Web Solutions
+                {content.translation.SLOGAN_LINE_2}
               </p>
             </div>
           </div>
@@ -67,10 +67,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="text-white/70 text-lg md:text-xl mb-8 md:mb-12">
-                  At Primus, we are committed to delivering top-notch web
-                  development, user interface, and graphic design solutions.
-                  With expertise in various technical aspects, we ensure the
-                  success of every project we handle.
+                  {content.translation.INTRODUCTION_CONTENT}
                 </p>
                 <button className="border border-[#00FF85] text-[#00FF85] px-6 py-3 md:px-12 md:py-4 hover:bg-[#00FF85] hover:text-[#2A2E3D] transition duration-300">
                   VIEW OUR RESUME
@@ -244,33 +241,36 @@ export default function Home() {
                     CONNECT WITH US
                   </h2>
                   <p className="text-lg md:text-xl text-white/70">
-                    Let's discuss how we can bring your ideas to life. Reach out
-                    to us, and we'll respond promptly.
+                    {content.translation.CONNECT_WITH_US_CONTENT}
                   </p>
                 </div>
                 <ContactForm></ContactForm>
               </div>
               <div className="flex justify-center space-x-6 mt-8 md:mt-12">
                 <a
-                  href="#"
+                  href={content.translation.EXTERNAL_LINKS.LINKED_IN}
+                  target='_blank'
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Linkedin size={24} />
                 </a>
                 <a
-                  href="#"
+                  href={content.translation.EXTERNAL_LINKS.X}
+                  target='_blank'
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Twitter size={24} />
                 </a>
                 <a
-                  href="#"
+                  href={content.translation.EXTERNAL_LINKS.INSTAGRAM}
+                  target='_blank'
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Instagram size={24} />
                 </a>
                 <a
-                  href="#"
+                  href={content.translation.EXTERNAL_LINKS.FACEBOOK}
+                  target='_blank'
                   className="text-white/70 hover:text-[#00FF85] transition"
                 >
                   <Facebook size={24} />
