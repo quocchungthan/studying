@@ -12,7 +12,7 @@ const ExperienceSection = ({ experienceData }) => {
           setIsVisible(true); // Section is in view
         }
       },
-      { threshold: 0.3 } // Trigger when 50% of the section is in view
+      { threshold: 0.1 } // Trigger when 50% of the section is in view
     );
 
     if (sectionRef.current) {

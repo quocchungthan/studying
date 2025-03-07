@@ -12,7 +12,8 @@ import ExperienceSection from '../components/ExperienceSection';
 
 export default function Home() {
   const expertiseData = content.expertise.map((x: { name: string; level: string }) => ({ label: x.name, percentage: x.level }));
-  const experienceData =  content.experience.map((x: { period: string; name: string; subtitle: string; description: string }) => ({ period: x.period, title: x.name, description: x.description, role: x.subtitle.replace('## ', '') }));
+  const experienceData =  content.experience.map((x: { period: string; name: string; subtitle: string; description: string }) => ({ period: x.period, title: x.name, description: x.description, role: x.subtitle.replace('## ', '') }))
+    .sort((x, y) => x.period < y.period ? 1 : -1);
   const portfolioData = content.projects.map((x: { name: string; description: string; images: string[] }, i: number) => ({ id: i + 1, thumb: x.images[0], description: x.description, images: x.images, name: x.name }));
   
   const handleClick = () => {
