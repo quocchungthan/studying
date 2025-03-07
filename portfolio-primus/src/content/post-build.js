@@ -1,17 +1,26 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const sourceFile = path.join(__dirname, '../_redirects');
-const destinationFile = path.join(__dirname, '../../dist/_redirects');
+const filesToCopy = ["_redirects", "sitemap.xml", "robots.txt"];
+const sourceDir = path.join(__dirname, "../");
+const destinationDir = path.join(__dirname, "../../dist/");
 
 // Ensure the destination directory exists
-fs.mkdirSync(path.dirname(destinationFile), { recursive: true });
+fs.mkdirSync(destinationDir, { recursive: true });
 
-// Copy the file
-fs.copyFileSync(sourceFile, destinationFile);
+// Copy each file
+filesToCopy.forEach((file) => {
+    const sourceFile = path.join(sourceDir, file);
+    const destinationFile = path.join(destinationDir, file);
 
-console.log('✅ content.json copied to build folder successfully.');
+    if (fs.existsSync(sourceFile)) {
+        fs.copyFileSync(sourceFile, destinationFile);
+        console.log(`✅ ${file} copied to dist/ successfully.`);
+    } else {
+        console.warn(`⚠️  ${file} not found, skipping...`);
+    }
+});
