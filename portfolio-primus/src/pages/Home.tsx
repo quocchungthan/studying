@@ -12,6 +12,11 @@ export default function Home() {
   const expertiseData = content.expertise.map((x: { name: string; level: string }) => ({ label: x.name, percentage: x.level }));
   const experienceData =  content.experience.map((x: { period: string; name: string; subtitle: string; description: string }) => ({ period: x.period, title: x.name, description: x.description, role: x.subtitle.replace('## ', '') }));
   const portfolioData = content.projects.map((x: { name: string; description: string; images: string[] }, i: number) => ({ id: i + 1, thumb: x.images[0], description: x.description, images: x.images, name: x.name }));
+  
+  const handleClick = () => {
+    const url = content.translation.EXTERNAL_LINKS.TEAM_RESUME;
+    window.open(url, '_blank');
+  };
 
   return (
     <motion.div
@@ -69,7 +74,7 @@ export default function Home() {
                 <p className="text-white/70 text-lg md:text-xl mb-8 md:mb-12">
                   {content.translation.INTRODUCTION_CONTENT}
                 </p>
-                <button className="border border-[#00FF85] text-[#00FF85] px-6 py-3 md:px-12 md:py-4 hover:bg-[#00FF85] hover:text-[#2A2E3D] transition duration-300">
+                <button onClick={handleClick} className="border border-[#00FF85] text-[#00FF85] px-6 py-3 md:px-12 md:py-4 hover:bg-[#00FF85] hover:text-[#2A2E3D] transition duration-300">
                   VIEW OUR RESUME
                 </button>
               </div>
