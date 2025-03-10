@@ -7,18 +7,11 @@ import Footer from '../components/Footer';
 import logo from '../assets/primus-high-resolution-logo-transparent-cropped.svg';
 import ContactForm from '../components/ContactForm';
 import content from '../assets/content.json';
-import ExpertiseSection from '../components/ExpertiseSection';
+// import ExpertiseSection from '../components/ExpertiseSection';
 import ExperienceSection from '../components/ExperienceSection';
 import ToolboxSection from '../components/ToolboxSection';
 
 export default function Home() {
-  const expertiseData = content.expertise.map(
-    (x: { name: string; level: string }) => ({
-      label: x.name,
-      percentage: x.level,
-    })
-  );
-
   // Transform experience data for the ExperienceSection
   const experienceData = content.experience
     .map(
@@ -43,6 +36,7 @@ export default function Home() {
     description: project.description,
     images: project.images,
     name: project.name,
+    links: project.links,
   }));
 
   const handleClick = () => {
