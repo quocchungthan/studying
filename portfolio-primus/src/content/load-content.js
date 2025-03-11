@@ -27,7 +27,13 @@ const loadMarkdownFiles = (dir, isProject = false, isExperience = false) => {
         const lines = content.split('\n').map(line => line.trim()).filter(line => line);
         const subtitle = lines[0] || '';
         const description = lines.slice(1).join(' ') || '';
-        const images = lines.filter(line => line.startsWith('http'));
+        
+        // Extract images (both full URLs and local paths)
+        const images = lines.filter(line => 
+            line.startsWith('http') || 
+            line.startsWith('/assets/') || 
+            line.startsWith('./assets/')
+        );
         
         // Extract website and source links for projects
         const websiteLine = lines.find(line => line.startsWith('website:'));
@@ -79,7 +85,12 @@ const generateMetaTags = (content) => {
     let metaTags = '';
     if (content.projects.length > 0) {
         const project = content.projects[0];
-        metaTags = `\n    <meta property="og:title" content="${project.name}" />\n    <meta property="og:description" content="${project.description}" />\n    <meta property="og:image" content="${project.images[0] || ''}" />\n    <meta property="og:type" content="website" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${project.name}" />\n    <meta name="twitter:description" content="${project.description}" />\n    <meta name="twitter:image" content="${project.images[0] || ''}" />\n    `;
+        // Use the first image, ensuring it's a full URL (not a local path)
+        const imageUrl = project.images[0]?.startsWith('http') 
+            ? project.images[0] 
+            : '';
+            
+        metaTags = `\n    <meta property="og:title" content="${project.name}" />\n    <meta property="og:description" content="${project.description}" />\n    <meta property="og:image" content="${imageUrl}" />\n    <meta property="og:type" content="website" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${project.name}" />\n    <meta name="twitter:description" content="${project.description}" />\n    <meta name="twitter:image" content="${imageUrl}" />\n    `;
     }
     
     let indexHtml = fs.readFileSync(indexHtmlFile, 'utf8');
