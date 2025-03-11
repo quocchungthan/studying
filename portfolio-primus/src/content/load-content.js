@@ -28,10 +28,28 @@ const loadMarkdownFiles = (dir, isProject = false, isExperience = false) => {
         const subtitle = lines[0] || '';
         const description = lines.slice(1).join(' ') || '';
         const images = lines.filter(line => line.startsWith('http'));
+        
+        // Extract website and source links for projects
+        const websiteLine = lines.find(line => line.startsWith('website:'));
+        const sourceLine = lines.find(line => line.startsWith('source:'));
+        
+        const links = {};
+        if (websiteLine) {
+            links.website = websiteLine.replace('website:', '').trim();
+        }
+        if (sourceLine) {
+            links.source = sourceLine.replace('source:', '').trim();
+        }
 
         if (isProject) {
             const [projectName, period] = name.split('_');
-            return { name: projectName, subtitle: period, description: subtitle, images };
+            return { 
+                name: projectName, 
+                subtitle: period, 
+                description: subtitle, 
+                images,
+                links: Object.keys(links).length > 0 ? links : undefined
+            };
         }
 
         if (isExperience) {
