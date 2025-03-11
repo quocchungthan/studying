@@ -30,7 +30,7 @@ export default async (req, context) => {
     const fitOption = fit || 'cover';
 
     // Resolve the full image path from the public directory
-    const imageFullPath = path.resolve('public', imagePath);  // Adjust to match your project structure
+    const imageFullPath = path.resolve('dist', imagePath);  // Adjust to match your project structure
 
     // Check if the image exists
     if (!fs.existsSync(imageFullPath)) {
