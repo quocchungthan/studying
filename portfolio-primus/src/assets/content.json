@@ -14,82 +14,29 @@
   },
   "projects": [
     {
-      "name": "BizFlow",
-      "description": "Developed a cloud-based business management solution tailored for small and medium enterprises struggling with inefficient workflows. The platform provided streamlined inventory management, automated invoicing, and a centralized CRM system, allowing businesses to enhance their operational efficiency. By integrating real-time analytics and role-based access control, we empowered business owners to make data-driven decisions while ensuring data security and team collaboration.",
+      "name": "Kanban Board",
+      "description": "Kanban Board is a simple task management tool that allows users to create tasks and track their progress. Tasks can be easily dragged and dropped between three columns: To Do, In Progress, and Completed. This visual approach helps users stay organized and efficiently track their workflow.",
       "images": [
-        "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1481487196290-c152efe083f5?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2015"
+        "https://primusteam.netlify.app/KanbanBoard/screenshot1.jpg",
+        "https://primusteam.netlify.app/KanbanBoard/screenshot3.jpg",
+        "https://primusteam.netlify.app/KanbanBoard/screenshot2.jpg"
       ],
       "links": {
-        "website": "https://bizflow-demo.netlify.app",
-        "source": "https://github.com/primus/bizflow"
+        "website": "https://primuskanban.netlify.app/",
+        "source": "https://github.com/primussquad/literate-fishstick.git"
       }
     },
     {
-      "name": "CareTrack Project",
-      "description": "Developed a remote patient monitoring system for healthcare providers, allowing them to track patients with anxiety and other chronic conditions. The platform combined AI-powered chatbots for symptom tracking with real-time alerts for doctors. Patients benefited from automated health insights, medication reminders, and lifestyle recommendations, reducing hospital visits and improving overall care outcomes.",
+      "name": "Primus Word Master",
+      "description": "Primus Word Master is a fun and challenging word game where players must guess a 5-letter word in 6 attempts. After each guess, the game provides feedback to guide the player, showing which letters are correct and in the right position. Test your vocabulary and deduction skills in this simple yet addictive game!",
       "images": [
-        "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1481487196290-c152efe083f5?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2015"
+        "https://primusteam.netlify.app/WordMaster/screenshot1.jpg",
+        "https://primusteam.netlify.app/WordMaster/screenshot2.jpg",
+        "https://primusteam.netlify.app/WordMaster/screenshot3.jpg"
       ],
       "links": {
-        "website": "https://caretrack-demo.netlify.app",
-        "source": "https://github.com/primus/caretrack"
-      }
-    },
-    {
-      "name": "CollabSync Project",
-      "description": "Created a real-time collaboration platform for remote teams facing communication and project management challenges. The tool combined instant messaging, task tracking, and document sharing in a unified interface, enabling teams to stay connected and productive. We leveraged WebSockets to ensure seamless real-time interactions and integrated popular productivity tools to enhance workflow efficiency. The solution significantly improved team coordination, reducing the reliance on multiple disconnected apps.",
-      "images": [
-        "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1481487196290-c152efe083f5?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2015"
-      ],
-      "links": {
-        "website": "https://collabsync-demo.netlify.app",
-        "source": "https://github.com/primus/collabsync"
-      }
-    },
-    {
-      "name": "FindGuard",
-      "description": "Developed a smart financial analytics platform to help individuals and businesses manage risks, track investments, and optimize financial decisions. The system leveraged AI-driven predictive models to assess market trends and provide personalized recommendations. By integrating secure APIs with banking and stock market data, we enabled users to automate portfolio management and reduce financial uncertainty.",
-      "images": [
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=2015"
-      ],
-      "links": {
-        "website": "https://findguard-finance.netlify.app",
-        "source": "https://github.com/primus/findguard"
-      }
-    },
-    {
-      "name": "MediSync Project",
-      "description": "Built an AI-powered virtual assistant designed to help individuals manage anxiety and mental well-being. Using natural language processing (NLP), the assistant provided real-time emotional support, guided breathing exercises, and personalized coping strategies. Integrated with wearable devices and mobile apps, it helped users track stress levels and provided actionable insights for improved mental health.",
-      "images": [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=2015"
-      ],
-      "links": {
-        "website": "https://medisync-health.netlify.app",
-        "source": "https://github.com/primus/medisync"
-      }
-    },
-    {
-      "name": "NexusCart",
-      "description": "Designed and developed a robust e-commerce platform for small and mid-sized businesses looking to expand their online presence. The platform included a secure payment gateway, an optimized product search engine, and seamless integration with third-party logistics providers. By implementing a responsive design and an intuitive UI, we helped merchants increase their sales conversion rates while simplifying order management and inventory tracking.",
-      "images": [
-        "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1481487196290-c152efe083f5?auto=format&fit=crop&q=80&w=2015",
-        "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2015"
-      ],
-      "links": {
-        "website": "https://nexuscart-demo.netlify.app",
-        "source": "https://github.com/primus/nexuscart"
+        "website": "https://primuswordgame.netlify.app/",
+        "source": "https://github.com/primussquad/legendary-octo-potato.git"
       }
     },
     {
