@@ -34,6 +34,7 @@ export default async (req, context) => {
 
     // Check if the image exists
     if (!fs.existsSync(imageFullPath)) {
+      console.log(imageFullPath);
       return new Response(
         JSON.stringify({ message: `Image not found: ${imagePath}` }),
         { status: 404 }
